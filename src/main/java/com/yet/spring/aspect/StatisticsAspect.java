@@ -1,9 +1,13 @@
 package com.yet.spring.aspect;
 
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
+import org.aspectj.lang.annotation.*;
 
-@Component
 @Aspect
 public class StatisticsAspect {
+
+    private int count;
+
+    @Pointcut("execution(* *EventLogger.logEvent(..))")
+    private void allCountEventLoggers() {}
+
 }
