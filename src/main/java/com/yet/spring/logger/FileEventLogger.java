@@ -23,7 +23,7 @@ public class FileEventLogger implements EventLogger {
     @Override
     public void logEvent(Event event){
         try{
-            FileUtils.writeStringToFile(file, event.toString() + "\n", Charset.defaultCharset());
+            FileUtils.writeStringToFile(file, event.toString() + "\n", Charset.defaultCharset(), true);
         }catch(IOException e){
             e.printStackTrace();
         }

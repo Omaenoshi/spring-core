@@ -10,13 +10,18 @@
 
     <bean id="app" class="com.yet.spring.App">
         <constructor-arg index="0" ref="client"/>
-        <constructor-arg index="1" ref="fileEventLogger"/>
+        <constructor-arg index="1" ref="cacheFileEventLogger"/>
     </bean>
 
     <bean id="consoleEventLogger" class="com.yet.spring.logger.ConsoleEventLogger"/>
 
     <bean id="fileEventLogger" class="com.yet.spring.logger.FileEventLogger" init-method="init">
         <constructor-arg value="app.log"/>
+    </bean>
+
+    <bean id="cacheFileEventLogger" class="com.yet.spring.logger.CacheFileEventLogger" init-method="init">
+        <constructor-arg index="0" value="app.log"/>
+        <constructor-arg index="1" value="2"/>
     </bean>
 
     <bean id="event" class="com.yet.spring.bean.Event" scope="prototype">

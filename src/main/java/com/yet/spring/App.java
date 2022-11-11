@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.io.IOException;
 
 public class App {
-
     private Client client;
     private EventLogger eventLogger;
 
@@ -19,6 +18,14 @@ public class App {
         Event event = context.getBean("event", Event.class);
         event.setMsg("Some event for user 1");
         app.logEvent(event);
+
+        Event event2 = context.getBean("event", Event.class);
+        event2.setMsg("Some event for user 2");
+        app.logEvent(event2);
+
+        Event event3 = context.getBean("event", Event.class);
+        event3.setMsg("Some event for user 3");
+        app.logEvent(event3);
     }
 
     public App() {
