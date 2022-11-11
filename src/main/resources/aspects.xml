@@ -8,4 +8,5 @@
 
     <aop:aspectj-autoproxy />
 
+    <bean id="loggingAspect" class="com.yet.spring.aspect.LoggingAspect"/>
 </beans>
