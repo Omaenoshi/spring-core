@@ -3,16 +3,30 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="client" class="com.yet.spring.Client">
+    <bean id="client" class="com.yet.spring.bean.Client">
         <constructor-arg index="0" value="1"/>
         <constructor-arg index="1" value="John Smith"/>
     </bean>
 
     <bean id="app" class="com.yet.spring.App">
         <constructor-arg index="0" ref="client"/>
-        <constructor-arg index="1" ref="eventLogger"/>
+        <constructor-arg index="1" ref="fileEventLogger"/>
     </bean>
 
-    <bean id="eventLogger" class="com.yet.spring.ConsoleEventLogger"/>
+    <bean id="consoleEventLogger" class="com.yet.spring.logger.ConsoleEventLogger"/>
+
+    <bean id="fileEventLogger" class="com.yet.spring.logger.FileEventLogger" init-method="init">
+        <constructor-arg value="app.log"/>
+    </bean>
+
+    <bean id="event" class="com.yet.spring.bean.Event" scope="prototype">
+        <constructor-arg>
+            <bean class="java.util.Date"/>
+        </constructor-arg>
+
+        <constructor-arg>
+            <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
+        </constructor-arg>
+    </bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package com.yet.spring;
+package com.yet.spring.bean;
 
 public class Client {
 

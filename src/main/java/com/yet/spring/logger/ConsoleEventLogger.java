@@ -1,6 +1,8 @@
-package com.yet.spring;
+package com.yet.spring.logger;
 
-public class ConsoleEventLogger implements EventLogger{
+import com.yet.spring.bean.Event;
+
+public class ConsoleEventLogger implements EventLogger {
 
     public ConsoleEventLogger() {
     }
