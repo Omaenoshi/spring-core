@@ -2,13 +2,13 @@ package com.yet.spring;
 
 public class Client {
 
-    private long id;
+    private int id;
     private String fullName;
 
     public Client() {
     }
 
-    public Client(long id, String fullName) {
+    public Client(int id, String fullName) {
         this.id = id;
         this.fullName = fullName;
     }
@@ -21,7 +21,7 @@ public class Client {
         return fullName;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
