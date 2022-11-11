@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class App {
     private Client client;
-    private EventLogger eventLogger;
+    private EventLogger defaultLogger;
     private Map<EventType, EventLogger> loggers;
 
     public static void main(String[] args) throws IOException {
@@ -36,9 +36,9 @@ public class App {
     public App() {
     }
 
-    public App(Client client, EventLogger eventLogger, Map<EventType, EventLogger> loggers) {
+    public App(Client client, EventLogger defaultLogger, Map<EventType, EventLogger> loggers) {
         this.client = client;
-        this.eventLogger = eventLogger;
+        this.defaultLogger = defaultLogger;
         this.loggers = loggers;
     }
 
@@ -48,7 +48,7 @@ public class App {
 
         EventLogger logger = loggers.get(type);
         if (logger == null) {
-            logger = eventLogger;
+            logger = defaultLogger;
         }
 
         logger.logEvent(event);
