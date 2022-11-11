@@ -5,6 +5,9 @@ public class Client {
     private long id;
     private String fullName;
 
+    public Client() {
+    }
+
     public Client(long id, String fullName) {
         this.id = id;
         this.fullName = fullName;
