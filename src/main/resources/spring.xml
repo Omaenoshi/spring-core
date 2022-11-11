@@ -13,6 +13,12 @@
     <bean id="app" class="com.yet.spring.App">
         <constructor-arg index="0" ref="client"/>
         <constructor-arg index="1" ref="cacheFileEventLogger"/>
+        <constructor-arg>
+            <map>
+                <entry key="INFO" value-ref="consoleEventLogger"/>
+                <entry key="ERROR" value-ref="combinedEventLogger"/>
+            </map>
+        </constructor-arg>
     </bean>
 
     <bean id="event" class="com.yet.spring.bean.Event" scope="prototype">

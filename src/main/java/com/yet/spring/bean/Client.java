@@ -13,7 +13,7 @@ public class Client {
         this.fullName = fullName;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
