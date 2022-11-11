@@ -19,7 +19,7 @@
         <constructor-arg value="app.log"/>
     </bean>
 
-    <bean id="cacheFileEventLogger" class="com.yet.spring.logger.CacheFileEventLogger" init-method="init">
+    <bean id="cacheFileEventLogger" class="com.yet.spring.logger.CacheFileEventLogger" init-method="init" destroy-method="destroy">
         <constructor-arg index="0" value="app.log"/>
         <constructor-arg index="1" value="2"/>
     </bean>
