@@ -14,12 +14,16 @@
 
     <import resource="loggers.xml"/>
     <import resource="aspects.xml"/>
-
-    <context:annotation-config/>
+    <import resource="db.xml"/>
 
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-        <property name="location" value="client.properties"/>
-        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:client.properties</value>
+                <value>classpath:db.properties</value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
 
     <bean id="client"
@@ -36,7 +40,7 @@
 
     <bean id="app" class="com.yet.spring.App">
         <constructor-arg index="0" ref="client"/>
-        <constructor-arg index="1" value="#{ T(com.yet.spring.bean.Event).isDay(8, 17) ? fileEventLogger : consoleEventLogger }"/>
+        <constructor-arg index="1" value="#{ T(com.yet.spring.bean.Event).isDay(8, 17) ? fileEventLogger : dbLogger }"/>
         <constructor-arg index="2" ref="loggerMap"/>
     </bean>
 
