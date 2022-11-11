@@ -1,6 +1,7 @@
 package com.yet.spring.bean;
 
 import java.text.DateFormat;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Event {
@@ -10,6 +11,11 @@ public class Event {
     private Date date;
     private DateFormat formatter;
 
+    public static boolean isDay(int start, int end) {
+        LocalTime time = LocalTime.now();
+
+        return time.getHour() > start && time.getHour() < end;
+    }
     public Event() {
     }
 

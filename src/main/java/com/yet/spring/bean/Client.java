@@ -22,6 +22,10 @@ public class Client {
         return fullName;
     }
 
+    public String getGreeting() {
+        return greeting;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

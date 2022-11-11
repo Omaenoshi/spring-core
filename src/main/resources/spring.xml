@@ -35,7 +35,7 @@
 
     <bean id="app" class="com.yet.spring.App">
         <constructor-arg index="0" ref="client"/>
-        <constructor-arg index="1" ref="cacheFileEventLogger"/>
+        <constructor-arg index="1" value="#{ T(com.yet.spring.bean.Event).isDay(8, 17) ? fileEventLogger : consoleEventLogger }"/>
         <constructor-arg index="2" ref="loggerMap"/>
     </bean>
 
