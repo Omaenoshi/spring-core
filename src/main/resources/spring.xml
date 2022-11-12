@@ -31,6 +31,7 @@
           c:_0="${id}"
           c:_1="${name}"
           p:greeting="${greeting}"
+          p:city="Chelyabinsk"
     />
 
     <util:map id="loggerMap">

@@ -1,10 +1,10 @@
 package com.yet.spring.bean;
 
 public class Client {
-
     private int id;
     private String fullName;
     private String greeting;
+    private String city;
 
     public Client() {
     }
@@ -26,8 +26,16 @@ public class Client {
         return greeting;
     }
 
+    public String getCity() {
+        return city;
+    }
+
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public void setFullName(String fullName) {
