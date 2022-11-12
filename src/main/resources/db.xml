@@ -15,9 +15,8 @@
     </bean>
 
     <bean id="dbLogger" class="com.yet.spring.logger.DBLogger"
-          init-method="init" destroy-method="destroy">
+          destroy-method="destroy">
         <constructor-arg ref="jdbcTemplate"/>
-        <constructor-arg value="${jdbc.username}"/>
     </bean>
 
 </beans>
