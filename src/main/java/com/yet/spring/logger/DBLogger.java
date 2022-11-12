@@ -41,7 +41,7 @@ public class DBLogger implements EventLogger{
 
     @Override
     public void logEvent(Event event) {
-        jdbcTemplate.update("INSERT INTO events (id, date, msg) VALUES (?,?,?)", event.getId(), event.getDate(),
+        jdbcTemplate.update("INSERT INTO events (id, date, msg) VALUES (?,?,?)", getMaxId() + 1, event.getDate(),
                 event.toString());
         System.out.println("Saved to DB event with id " + event.getId());
     }
